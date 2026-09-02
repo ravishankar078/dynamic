@@ -1,0 +1,82 @@
+[
+  {
+    "id": "threat-001",
+    "category": "credential_harvesting",
+    "description": "Fake password reset or account verification requesting credentials",
+    "keywords": ["password", "reset", "verify", "account", "credentials", "login", "sign in", "expire", "suspended", "locked"],
+    "signals": ["urgency", "fear", "credential_request"],
+    "exampleSubject": "Your account has been suspended - verify now",
+    "severity": "critical",
+    "intent": "ENTER_PASSWORD"
+  },
+  {
+    "id": "threat-002",
+    "category": "account_suspension",
+    "description": "Fake account suspension notice creating urgency and fear",
+    "keywords": ["suspended", "disabled", "locked", "unauthorized", "breach", "compromised", "immediately", "within 24 hours"],
+    "signals": ["urgency", "fear", "authority_pressure"],
+    "exampleSubject": "URGENT: Your account will be permanently deleted",
+    "severity": "critical",
+    "intent": "CLICK_LINK"
+  },
+  {
+    "id": "threat-003",
+    "category": "ceo_gift_card_scam",
+    "description": "Executive impersonation requesting purchase of gift cards or wire transfer",
+    "keywords": ["gift card", "gift cards", "wire transfer", "western union", "bitcoin", "urgent favor", "confidential", "don't tell", "between us", "quick task"],
+    "signals": ["authority_pressure", "urgency", "secrecy", "financial_request"],
+    "exampleSubject": "Quick favor needed - confidential",
+    "severity": "critical",
+    "intent": "SEND_MONEY"
+  },
+  {
+    "id": "threat-004",
+    "category": "fake_invoice",
+    "description": "Fraudulent invoice or payment request from unknown vendor",
+    "keywords": ["invoice", "payment due", "overdue", "outstanding balance", "wire", "bank details", "remittance", "purchase order"],
+    "signals": ["urgency", "financial_request", "authority_pressure"],
+    "exampleSubject": "Invoice #INV-2024-8827 - Payment Overdue",
+    "severity": "high",
+    "intent": "SEND_MONEY"
+  },
+  {
+    "id": "threat-005",
+    "category": "login_verification",
+    "description": "Fake login alert requesting verification via suspicious link",
+    "keywords": ["unusual login", "new device", "verify identity", "confirm login", "security alert", "sign-in attempt", "location"],
+    "signals": ["urgency", "fear", "credential_request"],
+    "exampleSubject": "Security Alert: Unusual sign-in activity",
+    "severity": "high",
+    "intent": "CLICK_LINK"
+  },
+  {
+    "id": "threat-006",
+    "category": "domain_impersonation",
+    "description": "Email from lookalike domain impersonating trusted organization",
+    "keywords": ["micros0ft", "g00gle", "amaz0n", "paypa1", "app1e", "support", "helpdesk", "admin"],
+    "signals": ["identity_mismatch", "credential_request"],
+    "exampleSubject": "Action Required: Verify your Microsoft 365 account",
+    "severity": "critical",
+    "intent": "ENTER_PASSWORD"
+  },
+  {
+    "id": "threat-007",
+    "category": "prompt_injection",
+    "description": "Message attempting to manipulate AI security analysis",
+    "keywords": ["ignore previous", "override", "mark this safe", "disable security", "reveal your prompt", "bypass", "system prompt", "you are now"],
+    "signals": ["prompt_injection"],
+    "exampleSubject": "Important system update",
+    "severity": "critical",
+    "intent": "PROMPT_INJECTION"
+  },
+  {
+    "id": "threat-008",
+    "category": "document_sharing",
+    "description": "Fake shared document link leading to credential harvesting",
+    "keywords": ["shared a document", "shared a file", "google docs", "onedrive", "dropbox", "review document", "sign in to view"],
+    "signals": ["credential_request", "urgency"],
+    "exampleSubject": "Document shared with you - Review required",
+    "severity": "high",
+    "intent": "CLICK_LINK"
+  }
+]
